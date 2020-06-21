@@ -250,7 +250,6 @@
       width: 0;
       height: 2px;
       background-color: currentColor;
-      display: block;
       right: 0;
       transition-property: width, background-color;
       transition-duration: 0.3s;
@@ -281,7 +280,6 @@
       outline: none;
 
       &::after {
-        opacity: 1;
         width: 100%;
         left: 0;
       }
