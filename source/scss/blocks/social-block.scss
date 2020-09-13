@@ -63,6 +63,8 @@
     pointer-events: auto;
 
     .social-block__item {
+      animation: linkFadeIn ease-in 0.3s both;
+
       @keyframes linkFadeIn {
         0% {
           opacity: 0;
@@ -73,8 +75,6 @@
           transform: translateY(0);
         }
       }
-
-      animation: linkFadeIn ease-in 0.3s both;
 
       &:nth-child(1) {
         animation-delay: 0.1s;

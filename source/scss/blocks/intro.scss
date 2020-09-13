@@ -93,6 +93,7 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
+  animation: messageFadeIn ease-out 0.5s;
 
   @keyframes messageFadeIn {
     0% {
@@ -104,8 +105,6 @@
       transform: translateY(0);
     }
   }
-
-  animation: messageFadeIn ease-out 0.5s;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
