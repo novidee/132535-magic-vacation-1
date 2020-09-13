@@ -1,12 +1,5 @@
 .social-block {
   position: relative;
-
-  &:hover {
-    .social-block__list {
-      opacity: 1;
-      pointer-events: auto;
-    }
-  }
 }
 
 .social-block__toggler {
@@ -46,8 +39,7 @@
     height: 2.2rem;
   }
 
-  &:hover,
-  .social-block--active & {
+  &:hover {
     color: $c-purple;
 
     &::before {
@@ -62,10 +54,36 @@
     &::before {
       border-color: $c-purple;
     }
+  }
 
-    & + .social-block__list {
-      opacity: 1;
-      pointer-events: auto;
+  &:hover + .social-block__list,
+  &:focus + .social-block__list {
+    opacity: 1;
+    pointer-events: auto;
+
+    .social-block__item {
+      @keyframes linkFadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(1rem);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      animation: linkFadeIn ease-in 0.3s both;
+
+      &:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.3s;
+      }
     }
   }
 
@@ -137,36 +155,6 @@
   &:focus-within {
     opacity: 1;
     pointer-events: auto;
-  }
-
-  .social-block--active & {
-    opacity: 1;
-    pointer-events: auto;
-
-    .social-block__item {
-      @keyframes linkFadeIn {
-        0% {
-          opacity: 0;
-          transform: translateY(1rem);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      animation: linkFadeIn ease-in 0.3s both;
-
-      &:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      &:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      &:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-    }
   }
 }
 
