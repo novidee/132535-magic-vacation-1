@@ -124,6 +124,26 @@
     line-height: 1.5rem;
   }
 }
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.swiper-slide-active {
+  .slider__item-text {
+    animation: textFadeIn 0.5s ease-out 0.3s both;
+  }
+}
+.swiper-slide-next {
+  .slider__item-text {
+    animation: textFadeIn 0.7s ease-out 0.5s both;
+  }
+}
 
 .slider__controls {
   position: absolute;
