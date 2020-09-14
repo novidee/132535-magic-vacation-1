@@ -34,6 +34,8 @@
   margin-right: 3rem;
   border-radius: 3rem;
   overflow: hidden;
+  // Исправляет баг safari с border-radius во время анимации https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 
   @media (min-width: $stop-scaling) {
     margin-right: 30px;
