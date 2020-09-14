@@ -1,5 +1,5 @@
 export default () => {
-  window.addEventListener('load', () => {
-    document.querySelector('.page').classList.add('page--loaded');
+  window.addEventListener(`load`, () => {
+    document.querySelector(`.page`).classList.add(`page--loaded`);
   });
 };
