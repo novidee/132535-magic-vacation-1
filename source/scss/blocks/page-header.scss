@@ -37,7 +37,7 @@
   color: $c-light;
   opacity: 0;
   transform: translateX(-20px);
-  transition: all 0.7s $ease-out-timing-function 0.2s;
+  transition: all 0.5s $ease-out-timing-function 0.2s;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -186,6 +186,8 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+  opacity: 0;
+  transition: opacity 0.5s $ease-out-timing-function;
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -277,12 +279,6 @@
       }
     }
 
-    &.active {
-      &::after {
-        width: 100%
-      }
-    }
-
     &:hover,
     &:focus {
       color: $c-purple;
@@ -292,6 +288,16 @@
         width: 100%;
         left: 0;
       }
+    }
+  }
+}
+.page--loaded {
+  .page-header__menu {
+    opacity: 1;
+
+    a.active::after {
+      left: 0;
+      width: 100%;
     }
   }
 }
