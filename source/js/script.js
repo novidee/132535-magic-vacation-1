@@ -6,9 +6,11 @@ import footer from './modules/footer.js';
 import chat from './modules/chat.js';
 import result from './modules/result.js';
 import form from './modules/form.js';
+import page from './modules/page.js';
 import FullPageScroll from './modules/full-page-scroll';
 
 // init modules
+page();
 mobileHeight();
 slider();
 menu();
