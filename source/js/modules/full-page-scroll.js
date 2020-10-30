@@ -1,6 +1,7 @@
 import throttle from 'lodash/throttle';
 
 const PRIZES_SCREEN_INDEX = 2;
+const BACKGROUND_SCREEN_ACTIVE_CLASS = 'background-screen--active';
 
 export default class FullPageScroll {
   constructor() {
@@ -34,7 +35,7 @@ export default class FullPageScroll {
   }
 
   onBackgroundScreenHide () {
-    this.backgroundScreen.classList.remove('background-screen--active');
+    this.backgroundScreen.classList.remove(BACKGROUND_SCREEN_ACTIVE_CLASS);
     this.showActiveScreen();
   }
 
@@ -51,7 +52,7 @@ export default class FullPageScroll {
   }
 
   showBackgroundScreen() {
-    this.backgroundScreen.classList.add('background-screen--active');
+    this.backgroundScreen.classList.add(BACKGROUND_SCREEN_ACTIVE_CLASS);
   }
 
   changeVisibilityDisplay() {
