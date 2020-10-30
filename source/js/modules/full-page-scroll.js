@@ -1,5 +1,6 @@
 import throttle from 'lodash/throttle';
 
+const STORY_SCREEN_INDEX = 1;
 const PRIZES_SCREEN_INDEX = 2;
 const BACKGROUND_SCREEN_ACTIVE_CLASS = 'background-screen--active';
 
@@ -12,6 +13,7 @@ export default class FullPageScroll {
     this.backgroundScreen = document.querySelector('.background-screen');
 
     this.activeScreen = 0;
+    this.previousActiveScreen = null;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
   }
@@ -20,7 +22,7 @@ export default class FullPageScroll {
     document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
     this.backgroundScreen.addEventListener('animationend', () => {
-      this.onBackgroundScreenHide();
+      this.showActiveScreen();
     });
 
     this.onUrlHashChanged();
@@ -30,17 +32,14 @@ export default class FullPageScroll {
     const currentPosition = this.activeScreen;
     this.reCalculateActiveScreenPosition(evt.deltaY);
     if (currentPosition !== this.activeScreen) {
+      this.previousActiveScreen = currentPosition;
       this.changePageDisplay();
     }
   }
 
-  onBackgroundScreenHide () {
-    this.backgroundScreen.classList.remove(BACKGROUND_SCREEN_ACTIVE_CLASS);
-    this.showActiveScreen();
-  }
-
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
+    this.previousActiveScreen = this.activeScreen;
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
     this.changePageDisplay();
   }
@@ -56,7 +55,7 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
-    if (this.activeScreen === PRIZES_SCREEN_INDEX) {
+    if (this.previousActiveScreen === STORY_SCREEN_INDEX && this.activeScreen === PRIZES_SCREEN_INDEX) {
       this.showBackgroundScreen();
     } else {
       this.showActiveScreen();
