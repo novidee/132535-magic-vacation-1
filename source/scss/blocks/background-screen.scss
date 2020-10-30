@@ -5,7 +5,12 @@
   background: $c-dark;
   position: fixed;
   z-index: 1;
-  animation: screenTransition 1s ease-out 0s forwards;
+  display: none;
+
+  &.background-screen--active {
+    display: block;
+    animation: screenTransition 1s ease-out 0s;
+  }
 }
 
 @keyframes screenTransition {

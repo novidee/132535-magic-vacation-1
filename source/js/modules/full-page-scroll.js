@@ -1,11 +1,14 @@
 import throttle from 'lodash/throttle';
 
+const PRIZES_SCREEN_INDEX = 2;
+
 export default class FullPageScroll {
   constructor() {
     this.THROTTLE_TIMEOUT = 2000;
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.backgroundScreen = document.querySelector('.background-screen');
 
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
@@ -15,6 +18,9 @@ export default class FullPageScroll {
   init() {
     document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
+    this.backgroundScreen.addEventListener('animationend', () => {
+      this.onBackgroundScreenHide();
+    });
 
     this.onUrlHashChanged();
   }
@@ -25,6 +31,11 @@ export default class FullPageScroll {
     if (currentPosition !== this.activeScreen) {
       this.changePageDisplay();
     }
+  }
+
+  onBackgroundScreenHide () {
+    this.backgroundScreen.classList.remove('background-screen--active');
+    this.showActiveScreen();
   }
 
   onUrlHashChanged() {
@@ -39,7 +50,19 @@ export default class FullPageScroll {
     this.emitChangeDisplayEvent();
   }
 
+  showBackgroundScreen() {
+    this.backgroundScreen.classList.add('background-screen--active');
+  }
+
   changeVisibilityDisplay() {
+    if (this.activeScreen === PRIZES_SCREEN_INDEX) {
+      this.showBackgroundScreen();
+    } else {
+      this.showActiveScreen();
+    }
+  }
+
+  showActiveScreen() {
     this.screenElements.forEach((screen) => {
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
