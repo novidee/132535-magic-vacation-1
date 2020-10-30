@@ -54,11 +54,19 @@ export default class FullPageScroll {
     this.backgroundScreen.classList.add(BACKGROUND_SCREEN_ACTIVE_CLASS);
   }
 
+  hideBackgroundScreen() {
+    this.backgroundScreen.classList.remove(BACKGROUND_SCREEN_ACTIVE_CLASS);
+  }
+
   changeVisibilityDisplay() {
     if (this.previousActiveScreen === STORY_SCREEN_INDEX && this.activeScreen === PRIZES_SCREEN_INDEX) {
       this.showBackgroundScreen();
     } else {
       this.showActiveScreen();
+    }
+
+    if (this.activeScreen < PRIZES_SCREEN_INDEX) {
+      this.hideBackgroundScreen();
     }
   }
 
