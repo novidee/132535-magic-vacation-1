@@ -9,6 +9,9 @@
 
   &.background-screen--active {
     display: block;
+  }
+
+  &.background-screen--animate {
     animation: screenTransition 1s ease-out 0s;
   }
 }
