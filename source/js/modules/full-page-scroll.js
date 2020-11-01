@@ -1,13 +1,20 @@
 import throttle from 'lodash/throttle';
 
+const STORY_SCREEN_INDEX = 1;
+const PRIZES_SCREEN_INDEX = 2;
+const BACKGROUND_SCREEN_ACTIVE_CLASS = 'background-screen--active';
+const BACKGROUND_SCREEN_ANIMATE_CLASS = 'background-screen--animate';
+
 export default class FullPageScroll {
   constructor() {
     this.THROTTLE_TIMEOUT = 2000;
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.backgroundScreen = document.querySelector('.background-screen');
 
     this.activeScreen = 0;
+    this.previousActiveScreen = null;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
   }
@@ -16,6 +23,13 @@ export default class FullPageScroll {
     document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
+    this.backgroundScreen.addEventListener('animationend', () => {
+      this.onBackgroundAnimationEnd();
+    });
+    this.backgroundScreen.addEventListener('animationcancel', () => {
+      this.onBackgroundAnimationEnd();
+    });
+
     this.onUrlHashChanged();
   }
 
@@ -23,14 +37,21 @@ export default class FullPageScroll {
     const currentPosition = this.activeScreen;
     this.reCalculateActiveScreenPosition(evt.deltaY);
     if (currentPosition !== this.activeScreen) {
+      this.previousActiveScreen = currentPosition;
       this.changePageDisplay();
     }
   }
 
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
+    this.previousActiveScreen = this.activeScreen;
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
     this.changePageDisplay();
+  }
+
+  onBackgroundAnimationEnd() {
+    this.showActiveScreen();
+    this.backgroundScreen.classList.remove(BACKGROUND_SCREEN_ANIMATE_CLASS);
   }
 
   changePageDisplay() {
@@ -40,6 +61,22 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
+    if (this.previousActiveScreen === STORY_SCREEN_INDEX && this.activeScreen === PRIZES_SCREEN_INDEX) {
+      this.backgroundScreen.classList.add(BACKGROUND_SCREEN_ANIMATE_CLASS);
+    } else {
+      this.showActiveScreen();
+    }
+
+    if (this.activeScreen < PRIZES_SCREEN_INDEX) {
+      this.backgroundScreen.classList.remove(BACKGROUND_SCREEN_ACTIVE_CLASS);
+    }
+
+    if (this.activeScreen >= PRIZES_SCREEN_INDEX) {
+      this.backgroundScreen.classList.add(BACKGROUND_SCREEN_ACTIVE_CLASS);
+    }
+  }
+
+  showActiveScreen() {
     this.screenElements.forEach((screen) => {
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);

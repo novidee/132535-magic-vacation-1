@@ -1,0 +1,27 @@
+.background-screen {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: $c-dark;
+  position: fixed;
+  z-index: 1;
+  display: none;
+
+  &.background-screen--active {
+    display: block;
+  }
+
+  &.background-screen--animate {
+    animation: screenTransition 1s ease-out 0s;
+  }
+}
+
+@keyframes screenTransition {
+  0% {
+    transform: translateY(80%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
