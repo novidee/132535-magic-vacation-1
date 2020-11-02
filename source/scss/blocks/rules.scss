@@ -150,6 +150,31 @@
   padding-left: 6.5rem;
   break-inside: avoid;
 
+  &:nth-child(2) {
+    &::before {
+      animation-delay: 0.3s;
+    }
+    .rules__text {
+      animation-delay: 0.4s;
+    }
+  }
+  &:nth-child(3) {
+    &::before {
+      animation-delay: 0.7s;
+    }
+    .rules__text {
+      animation-delay: 0.8s;
+    }
+  }
+  &:nth-child(4) {
+    &::before {
+      animation-delay: 1.1s;
+    }
+    .rules__text {
+      animation-delay: 1.2s;
+    }
+  }
+
   @media (min-width: $stop-scaling) {
     margin: 0 0 62px;
     padding-top: 6px;
@@ -185,7 +210,7 @@
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
-    animation: rulesItemCircleFadeIn 0.5s cubic-bezier(.53, .01, .25, 1.52) 0s;
+    animation: rulesItemCircleFadeIn 0.5s cubic-bezier(.53, .01, .25, 1.52) 0s both;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -203,13 +228,28 @@
       font-size: 1.4rem;
     }
   }
+}
 
-  p {
-    margin: 0;
+@keyframes rulesTextFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-    @media (max-width: $tablet) and (orientation: portrait) {
-      min-height: calc(1.4rem * 2.2);
-    }
+.rules__text {
+  margin: 0;
+  animation: rulesTextFadeIn 0.4s ease-out 0s both;
+
+  @media (max-width: $tablet) and (orientation: portrait) {
+    min-height: calc(1.4rem * 2.2);
   }
 }
 
