@@ -59,6 +59,7 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  animation: rulesFadeIn 0.4s ease-out 0s;
 
   @media (min-width: $stop-scaling) {
     margin-left: 58px;
@@ -84,6 +85,18 @@
 
   p {
     margin: 0;
+  }
+
+  @keyframes rulesFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(1em);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
