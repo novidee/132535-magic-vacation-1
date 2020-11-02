@@ -111,14 +111,14 @@
   max-width: 69.6rem;
 
   @media (min-width: $stop-scaling) {
-    column-gap: 96px;
+    grid-column-gap: 96px;
     padding-top: 70px;
     max-width: 696px;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
-    column-count: auto;
-    column-gap: 0;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
     padding: 0 2.5rem;
   }
 
@@ -127,7 +127,7 @@
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
-    column-gap: 4rem;
+    grid-column-gap: 4rem;
   }
 }
 
