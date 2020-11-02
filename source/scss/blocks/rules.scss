@@ -103,8 +103,9 @@
 .rules__list {
   @include list-reset;
   counter-reset: li;
-  column-count: 2;
-  column-gap: 9.6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 9.6rem;
   margin: auto;
   padding-top: 7rem;
   max-width: 69.6rem;
@@ -127,6 +128,18 @@
 
   @media (max-width: $mobile) and (orientation: landscape) {
     column-gap: 4rem;
+  }
+}
+
+@keyframes rulesItemCircleFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -172,6 +185,7 @@
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
+    animation: rulesItemCircleFadeIn 0.5s cubic-bezier(.53, .01, .25, 1.52) 0s;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
