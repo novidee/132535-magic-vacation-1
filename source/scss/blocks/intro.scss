@@ -52,18 +52,18 @@
   }
 }
 
-.text__word {
+.word {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.text__word > span {
+.word > span {
   transform: translate3d(0, 1.2em, 0);
   display: inline-block;
 }
 
-.intro__title.active .text__word > span {
+.intro__title--active .word > span {
   transform: translate3d(0, 0.2em, 0);
 }
 

@@ -1,3 +1,7 @@
+// 1 3 2 4 6 5
+
+// +2 -1 +2 -1 +2 -1
+
 class AccentTypography {
   constructor(
       element,
@@ -33,7 +37,7 @@ class AccentTypography {
       }, document.createDocumentFragment());
 
       const wordContainer = document.createElement(`span`);
-      wordContainer.classList.add(`text__word`);
+      wordContainer.classList.add(`word`);
       wordContainer.appendChild(letters);
       textContainer.appendChild(wordContainer);
       return textContainer;
@@ -59,7 +63,7 @@ export default () => {
   const animationTopScreenTextLine = new AccentTypography(
       document.querySelector(`.intro__title`),
       500,
-      `active`
+      `intro__title--active`
   );
   setTimeout(() => {
     animationTopScreenTextLine.runAnimation();
