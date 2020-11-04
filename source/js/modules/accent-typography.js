@@ -1,25 +1,21 @@
 class AccentTypography {
   constructor(
       element,
-      timer,
-      classForActivate,
-      property
+      duration,
+      classForActivate
   ) {
-    this._TIME_SPACE = 100;
-
     this._element = element;
-    this._timer = timer;
+    this._duration = duration;
     this._classForActivate = classForActivate;
-    this._property = property;
     this._timeOffset = 0;
 
     this.prepareText();
   }
 
-  createElement(letter) {
+  createLetterElement(letter) {
     const span = document.createElement(`span`);
     span.textContent = letter;
-    span.style.transition = `${this._property} ${this._timer}ms ease ${this._timeOffset}ms`;
+    span.style.transition = `transform ${this._duration}ms ease ${this._timeOffset}ms`;
     this._timeOffset += 20;
     return span;
   }
@@ -32,7 +28,7 @@ class AccentTypography {
 
     const content = text.reduce((textContainer, word) => {
       const letters = Array.from(word).reduce((wordContainer, letter) => {
-        wordContainer.appendChild(this.createElement(letter));
+        wordContainer.appendChild(this.createLetterElement(letter));
         return wordContainer;
       }, document.createDocumentFragment());
 
@@ -63,8 +59,7 @@ export default () => {
   const animationTopScreenTextLine = new AccentTypography(
       document.querySelector(`.intro__title`),
       500,
-      `active`,
-      `transform`
+      `active`
   );
   setTimeout(() => {
     animationTopScreenTextLine.runAnimation();
