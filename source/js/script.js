@@ -9,6 +9,7 @@ import form from './modules/form.js';
 import page from './modules/page.js';
 import rules from './modules/rules.js';
 import FullPageScroll from './modules/full-page-scroll';
+import accentTypography from './modules/accent-typography';
 
 page();
 mobileHeight();
@@ -19,6 +20,7 @@ chat();
 result();
 form();
 rules();
+accentTypography();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
