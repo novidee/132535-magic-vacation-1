@@ -33,6 +33,10 @@
   line-height: 1;
   letter-spacing: -0.04em;
 
+  &--accent .word > span {
+    transform: translate3d(0, 0.2em, 0);
+  }
+
   @media (min-width: $stop-scaling) {
     max-width: 990px;
     font-size: 120px;
@@ -61,10 +65,6 @@
 .word > span {
   transform: translate3d(0, 1.2em, 0);
   display: inline-block;
-}
-
-.intro__title--active .word > span {
-  transform: translate3d(0, 0.2em, 0);
 }
 
 .intro__content {
@@ -181,8 +181,11 @@
   font-family: $font-alt;
   font-weight: 400;
   font-size: 4.8rem;
-  line-height: 0.906;
-  letter-spacing: -0.04em;
+  line-height: 1;
+
+  &--accent .word > span {
+    transform: translate3d(0, 0.2em, 0);
+  }
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 0 -5px;

@@ -72,12 +72,21 @@ class AccentTypography {
 }
 
 export default () => {
-  const animationTopScreenTextLine = new AccentTypography(
+  const introAccentTypography = new AccentTypography(
       document.querySelector(`.intro__title`),
       500,
-      `intro__title--active`
+      `intro__title--accent`
   );
   setTimeout(() => {
-    animationTopScreenTextLine.runAnimation();
+    introAccentTypography.runAnimation();
   }, 500);
+
+  const introDateAccentTypography = new AccentTypography(
+      document.querySelector(`.intro__date`),
+      500,
+      `intro__date--accent`
+  );
+  setTimeout(() => {
+    introDateAccentTypography.runAnimation();
+  }, 1000);
 };
