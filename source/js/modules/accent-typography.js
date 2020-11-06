@@ -30,10 +30,17 @@ class AccentTypography {
   }
 
   createLetterElement(letter, duration, delay) {
-    const span = document.createElement(`span`);
-    span.textContent = letter;
-    span.style.transition = `transform ${duration}ms ease ${delay}ms`;
-    return span;
+    const letterContainer = document.createElement(`span`);
+    letterContainer.textContent = letter;
+    letterContainer.style.transition = `transform ${duration}ms ease ${delay}ms`;
+    return letterContainer;
+  }
+
+  createWordElement(letters) {
+    const wordContainer = document.createElement(`span`);
+    wordContainer.classList.add(`word`);
+    wordContainer.appendChild(letters);
+    return wordContainer;
   }
 
   getText() {
@@ -51,10 +58,7 @@ class AccentTypography {
         return wordContainer;
       }, document.createDocumentFragment());
 
-      const wordContainer = document.createElement(`span`);
-      wordContainer.classList.add(`word`);
-      wordContainer.appendChild(letters);
-      textContainer.appendChild(wordContainer);
+      textContainer.appendChild(this.createWordElement(letters));
       return textContainer;
     }, document.createDocumentFragment());
 
