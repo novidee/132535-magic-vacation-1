@@ -1,0 +1,17 @@
+.accent-word {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.accent-word__letter {
+  transform: translate3d(0, 1.2em, 0);
+  display: inline-block;
+}
+
+.intro__date--accent,
+.intro__title--accent {
+  .accent-word__letter {
+    transform: translate3d(0, 0.2em, 0);
+  }
+}

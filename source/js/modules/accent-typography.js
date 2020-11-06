@@ -31,6 +31,7 @@ class AccentTypography {
 
   createLetterElement(letter, duration, delay) {
     const letterContainer = document.createElement(`span`);
+    letterContainer.classList.add(`accent-word__letter`);
     letterContainer.textContent = letter;
     letterContainer.style.transition = `transform ${duration}ms ease ${delay}ms`;
     return letterContainer;
@@ -38,7 +39,7 @@ class AccentTypography {
 
   createWordElement(letters) {
     const wordContainer = document.createElement(`span`);
-    wordContainer.classList.add(`word`);
+    wordContainer.classList.add(`accent-word`);
     wordContainer.appendChild(letters);
     return wordContainer;
   }
