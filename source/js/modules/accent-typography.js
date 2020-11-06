@@ -7,44 +7,47 @@ class AccentTypography {
     this._element = element;
     this._duration = duration;
     this._classForActivate = classForActivate;
-    this._timeOffset = 0;
+    this._delays = this.getDelays(
+        this.getText().reduce((sum, word) => sum + word.length, 0)
+    );
 
     this.prepareText();
   }
 
-  _getDelays(count) {
-    const step = 20;
-    const pattern = [2, -1, 2, 2, -1];
+  getDelays(count) {
+    const DELAY = 80;
+    const STEP_PATTERN = [2, -1, 2, 2, -1];
 
     const result = [];
     let lastDelay = 0;
     for (let i = 0; i < count; i++) {
-      const delay = pattern[i % pattern.length];
+      const step = STEP_PATTERN[i % STEP_PATTERN.length];
       result.push(lastDelay);
-      lastDelay = lastDelay + step * delay;
+      lastDelay = lastDelay + step * DELAY;
     }
 
     return result;
   }
 
-  createLetterElement(letter) {
+  createLetterElement(letter, duration, delay) {
     const span = document.createElement(`span`);
     span.textContent = letter;
-    span.style.transition = `transform ${this._duration}ms ease ${this._timeOffset}ms`;
-    this._timeOffset += 20;
+    span.style.transition = `transform ${duration}ms ease ${delay}ms`;
     return span;
   }
 
-  prepareText() {
-    if (!this._element) {
-      return;
-    }
-    const text = this._element.textContent.trim().split(` `).filter(Boolean);
-    const delays = this._getDelays(6);
+  getText() {
+    return this._element.textContent.trim().split(` `).filter(Boolean);
+  }
 
+  prepareText() {
+    const text = this.getText();
+
+    let letterIndex = 0;
     const content = text.reduce((textContainer, word) => {
       const letters = Array.from(word).reduce((wordContainer, letter) => {
-        wordContainer.appendChild(this.createLetterElement(letter));
+        wordContainer.appendChild(this.createLetterElement(letter, this._duration, this._delays[letterIndex]));
+        letterIndex++;
         return wordContainer;
       }, document.createDocumentFragment());
 
@@ -60,9 +63,6 @@ class AccentTypography {
   }
 
   runAnimation() {
-    if (!this._element) {
-      return;
-    }
     this._element.classList.add(this._classForActivate);
   }
 }
