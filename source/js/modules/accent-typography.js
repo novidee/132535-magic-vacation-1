@@ -1,7 +1,3 @@
-// 1 3 2 4 6 5
-
-// +2 -1 +2 -1 +2 -1
-
 class AccentTypography {
   constructor(
       element,
@@ -14,6 +10,21 @@ class AccentTypography {
     this._timeOffset = 0;
 
     this.prepareText();
+  }
+
+  _getDelays(count) {
+    const step = 20;
+    const pattern = [2, -1, 2, 2, -1];
+
+    const result = [];
+    let lastDelay = 0;
+    for (let i = 0; i < count; i++) {
+      const delay = pattern[i % pattern.length];
+      result.push(lastDelay);
+      lastDelay = lastDelay + step * delay;
+    }
+
+    return result;
   }
 
   createLetterElement(letter) {
@@ -29,6 +40,7 @@ class AccentTypography {
       return;
     }
     const text = this._element.textContent.trim().split(` `).filter(Boolean);
+    const delays = this._getDelays(6);
 
     const content = text.reduce((textContainer, word) => {
       const letters = Array.from(word).reduce((wordContainer, letter) => {
@@ -52,10 +64,6 @@ class AccentTypography {
       return;
     }
     this._element.classList.add(this._classForActivate);
-  }
-
-  destroyAnimation() {
-    this._element.classList.remove(this._classForActivate);
   }
 }
 
