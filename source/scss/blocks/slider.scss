@@ -179,6 +179,7 @@
   animation-fill-mode: backwards;
   animation-timing-function: cubic-bezier(0.43, 0.44, 0.03, 1.65);
   animation-duration: 0.8s;
+  animation-play-state: paused;
 
   &--prev {
     animation-name: sliderPrevControlRollIn;
@@ -273,6 +274,9 @@
       transform: translateX(0) rotate(0);
     }
   }
+}
+.screen--story.active .slider__control {
+  animation-play-state: running;
 }
 
 .slider__pagination.swiper-pagination {
