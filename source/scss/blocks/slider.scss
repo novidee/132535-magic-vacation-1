@@ -175,6 +175,18 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(0.43, 0.44, 0.03, 1.65);
+  animation-duration: 0.8s;
+
+  &--prev {
+    animation-name: sliderPrevControlRollIn;
+  }
+
+  &--next {
+    animation-name: sliderNextControlRollIn;
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -238,6 +250,28 @@
   &.swiper-button-disabled {
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  @keyframes sliderPrevControlRollIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%) rotate(-140deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) rotate(0);
+    }
+  }
+
+  @keyframes sliderNextControlRollIn {
+    0% {
+      opacity: 0;
+      transform: translateX(100%) rotate(140deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) rotate(0);
+    }
   }
 }
 
