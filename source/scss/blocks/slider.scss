@@ -182,11 +182,19 @@
   animation-play-state: paused;
 
   &--prev {
-    animation-name: sliderPrevControlRollIn;
+    animation-name: controlFadeIn, sliderPrevControlRollIn;
+
+    &.swiper-button-disabled {
+      animation-name: disabledControlFadeIn, sliderPrevControlRollIn;
+    }
   }
 
   &--next {
-    animation-name: sliderNextControlRollIn;
+    animation-name: controlFadeIn, sliderNextControlRollIn;
+
+    &.swiper-button-disabled {
+      animation-name: disabledControlFadeIn, sliderNextControlRollIn;
+    }
   }
 
   @media (min-width: $stop-scaling) {
@@ -255,23 +263,37 @@
 
   @keyframes sliderPrevControlRollIn {
     0% {
-      opacity: 0;
       transform: translateX(-100%) rotate(-140deg);
     }
     100% {
-      opacity: 1;
       transform: translateX(0) rotate(0);
     }
   }
 
   @keyframes sliderNextControlRollIn {
     0% {
-      opacity: 0;
       transform: translateX(100%) rotate(140deg);
     }
     100% {
-      opacity: 1;
       transform: translateX(0) rotate(0);
+    }
+  }
+
+  @keyframes disabledControlFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes controlFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }
