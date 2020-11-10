@@ -175,6 +175,27 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(0.43, 0.44, 0.03, 1.65);
+  animation-duration: 0.8s;
+  animation-play-state: paused;
+
+  &--prev {
+    animation-name: controlFadeIn, sliderPrevControlRollIn;
+
+    &.swiper-button-disabled {
+      animation-name: disabledControlFadeIn, sliderPrevControlRollIn;
+    }
+  }
+
+  &--next {
+    animation-name: controlFadeIn, sliderNextControlRollIn;
+
+    &.swiper-button-disabled {
+      animation-name: disabledControlFadeIn, sliderNextControlRollIn;
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -239,6 +260,45 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
+  @keyframes sliderPrevControlRollIn {
+    0% {
+      transform: translateX(-100%) rotate(-140deg);
+    }
+    100% {
+      transform: translateX(0) rotate(0);
+    }
+  }
+
+  @keyframes sliderNextControlRollIn {
+    0% {
+      transform: translateX(100%) rotate(140deg);
+    }
+    100% {
+      transform: translateX(0) rotate(0);
+    }
+  }
+
+  @keyframes disabledControlFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes controlFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+.screen--story.active .slider__control {
+  animation-play-state: running;
 }
 
 .slider__pagination.swiper-pagination {
