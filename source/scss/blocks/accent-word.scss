@@ -14,7 +14,10 @@
 
 .intro__date--accent,
 .intro__title--accent,
-.slider__item-title--accent {
+.slider__item-title--accent,
+.prizes__title--accent,
+.rules__title--accent,
+.game__title--accent {
   .accent-word__letter {
     animation-play-state: running;
   }

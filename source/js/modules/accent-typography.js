@@ -88,4 +88,7 @@ export default () => {
   addAccentTypography(`intro__title`, 500);
   addAccentTypography(`intro__date`, 1000);
   addAccentTypography(`slider__item-title`, 500);
+  addAccentTypography(`prizes__title`, 500);
+  addAccentTypography(`rules__title`, 500);
+  addAccentTypography(`game__title`, 500);
 };
