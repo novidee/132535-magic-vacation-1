@@ -33,7 +33,8 @@ class AccentTypography {
     const letterContainer = document.createElement(`span`);
     letterContainer.classList.add(`accent-word__letter`);
     letterContainer.textContent = letter;
-    letterContainer.style.transition = `transform ${duration}ms ease ${delay}ms`;
+    letterContainer.style.animationDuration = `${duration}ms`;
+    letterContainer.style.animationDelay = `${delay}ms`;
     return letterContainer;
   }
 
@@ -72,22 +73,19 @@ class AccentTypography {
   }
 }
 
-export default () => {
-  const introAccentTypography = new AccentTypography(
-      document.querySelector(`.intro__title`),
+function addAccentTypography(className, delay) {
+  const accentTypography = new AccentTypography(
+      document.querySelector(`.${className}`),
       500,
-      `intro__title--accent`
+      `${className}--accent`
   );
   setTimeout(() => {
-    introAccentTypography.runAnimation();
-  }, 500);
+    accentTypography.runAnimation();
+  }, delay);
+}
 
-  const introDateAccentTypography = new AccentTypography(
-      document.querySelector(`.intro__date`),
-      500,
-      `intro__date--accent`
-  );
-  setTimeout(() => {
-    introDateAccentTypography.runAnimation();
-  }, 1000);
+export default () => {
+  addAccentTypography(`intro__title`, 500);
+  addAccentTypography(`intro__date`, 1000);
+  addAccentTypography(`slider__item-title`, 500);
 };

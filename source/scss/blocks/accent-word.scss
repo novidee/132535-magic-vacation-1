@@ -5,13 +5,26 @@
 }
 
 .accent-word__letter {
-  transform: translate3d(0, 1.2em, 0);
   display: inline-block;
+  animation-play-state: paused;
+  animation-name: letterSlideIn;
+  animation-fill-mode: both;
+  animation-timing-function: ease;
 }
 
 .intro__date--accent,
-.intro__title--accent {
+.intro__title--accent,
+.slider__item-title--accent {
   .accent-word__letter {
+    animation-play-state: running;
+  }
+}
+
+@keyframes letterSlideIn {
+  0% {
+    transform: translate3d(0, 1.2em, 0);
+  }
+  100% {
     transform: translate3d(0, 0.2em, 0);
   }
 }
