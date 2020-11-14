@@ -47,7 +47,8 @@
     transform: translate(190px, 0px);
   }
   &--leaf-left {
-    transform: translate(-180px, 100px);
+    transform-origin: 100% 50%;
+    animation: leafLeftShake 2s ease both;
   }
   &--leaf-green {
     transform: translate(220px, 80px);
@@ -79,6 +80,33 @@
     }
     100% {
       transform: translate(0px, 50px);
+    }
+  }
+
+  @keyframes leafLeftShake {
+    0% {
+      transform: translate(-230px, 90px) rotate(40deg);
+    }
+    14.2% {
+      transform: translate(-200px, 115px) rotate(-21deg);
+    }
+    28.4% {
+      transform: translate(-230px, 90px) rotate(13deg);
+    }
+    42.6% {
+      transform: translate(-230px, 90px) rotate(-8deg);
+    }
+    56.8% {
+      transform: translate(-230px, 90px) rotate(5deg);
+    }
+    71% {
+      transform: translate(-230px, 90px) rotate(-3deg);
+    }
+    85.2% {
+      transform: translate(-230px, 90px) rotate(2deg);
+    }
+    100% {
+      transform: translate(-230px, 90px) rotate(0);
     }
   }
 }
