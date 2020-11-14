@@ -44,19 +44,19 @@
   position: absolute;
 
   &--leaf-right {
-    transform: translate(20px, 20px);
+    transform: translate(190px, 0px);
   }
   &--leaf-left {
-    transform: translate(10px, 10px);
+    transform: translate(-180px, 100px);
   }
   &--leaf-green {
-    transform: translate(30px, 30px);
+    transform: translate(220px, 80px);
   }
-  &--leaf-flamingo {
-    transform: translate(-20px, -20px);
+  &--flamingo {
+    transform: translate(-90px, 110px);
   }
-  &--leaf-suitcase {
-    transform: translate(-40px, -40px);
+  &--suitcase {
+    transform: translate(0px, 50px);
   }
 }
 
