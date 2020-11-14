@@ -53,10 +53,10 @@
     transform: translate(220px, 80px);
   }
   &--flamingo {
-    animation: flamingoFadeIn 1s cubic-bezier(0.74, 0.41, 0.24, 0.71) both;
+    animation: flamingoFadeIn 0.5s cubic-bezier(0.74, 0.41, 0.24, 0.71) both;
   }
   &--suitcase {
-    transform: translate(0px, 50px);
+    animation: suitcaseSlideIn 0.5s ease both;
   }
 
   @keyframes flamingoFadeIn {
@@ -67,6 +67,18 @@
     100% {
       opacity: 1;
       transform: translate(-90px, 110px);
+    }
+  }
+
+  @keyframes suitcaseSlideIn {
+    0% {
+      transform: translate(-45px, calc(50vh - 90px)) scale(0.04);
+    }
+    80% {
+      transform: translate(0px, 20px);
+    }
+    100% {
+      transform: translate(0px, 50px);
     }
   }
 }
