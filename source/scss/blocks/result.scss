@@ -53,10 +53,21 @@
     transform: translate(220px, 80px);
   }
   &--flamingo {
-    transform: translate(-90px, 110px);
+    animation: flamingoFadeIn 1s cubic-bezier(0.74, 0.41, 0.24, 0.71) both;
   }
   &--suitcase {
     transform: translate(0px, 50px);
+  }
+
+  @keyframes flamingoFadeIn {
+    0% {
+      opacity: 0;
+      transform: translate(-90px, calc(50vh - 30%)) rotate(-20deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-90px, 110px);
+    }
   }
 }
 
