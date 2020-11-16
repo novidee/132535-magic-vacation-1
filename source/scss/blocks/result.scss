@@ -274,31 +274,6 @@
     font-size: 1.6rem;
   }
 
-  span {
-    position: relative;
-    margin-left: 1.5rem;
-    width: 4rem;
-    height: 4rem;
-    color: $c-dark;
-
-    @media (min-width: $stop-scaling) {
-      margin-left: 15px;
-      width: 40px;
-      height: 40px;
-    }
-
-    &::before {
-      @include center;
-      content: "";
-      width: 100%;
-      height: 100%;
-      background-color: $c-light;
-      border: 2px solid $c-light;
-      border-radius: 50%;
-      z-index: -1;
-    }
-  }
-
   svg {
     @include center;
     margin-left: 0.3rem;
@@ -313,7 +288,7 @@
   }
 
   &:hover {
-    span::before {
+    .result__button-icon::before {
       width: 112.5%;
       height: 112.5%;
     }
@@ -322,22 +297,60 @@
   &:focus {
     outline: none;
 
-    span::before {
+    .result__button-icon::before {
       border-color: $c-purple;
     }
   }
 
   &:active,
   &:active:focus {
-    span {
+    .result__button-icon {
       color: $c-light;
     }
 
-    span::before {
+    .result__button-icon::before {
       width: 100%;
       height: 100%;
       background-color: $c-purple;
       border-color: $c-purple;
+    }
+  }
+}
+
+.result__button-icon {
+  position: relative;
+  margin-left: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  color: $c-dark;
+
+  @media (min-width: $stop-scaling) {
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &::before {
+    @include center;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $c-light;
+    border: 2px solid $c-light;
+    border-radius: 50%;
+    z-index: -1;
+  }
+}
+
+.result__button-text {
+  animation: buttonTextFadeIn 0.5s ease both;
+
+  @keyframes buttonTextFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }
