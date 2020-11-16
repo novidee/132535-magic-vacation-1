@@ -323,6 +323,9 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  animation:
+          buttonIconRollIn 0.8s cubic-bezier(0.43, 0.44, 0.03, 1.65) both,
+          buttonIconFadeIn 0.8s ease both;
 
   @media (min-width: $stop-scaling) {
     margin-left: 15px;
@@ -339,6 +342,24 @@
     border: 2px solid $c-light;
     border-radius: 50%;
     z-index: -1;
+  }
+
+  @keyframes buttonIconFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes buttonIconRollIn {
+    0% {
+      transform: translateX(100%) rotate(140deg);
+    }
+    100% {
+      transform: translateX(0) rotate(0);
+    }
   }
 }
 
