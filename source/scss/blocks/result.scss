@@ -56,7 +56,9 @@
     animation: greenLeafShake 1.8s ease 0.2s both;
   }
   &--flamingo {
-    animation: flamingoFadeIn 0.5s cubic-bezier(0.74, 0.41, 0.24, 0.71) both;
+    animation:
+            flamingoFadeIn 0.5s cubic-bezier(0.74, 0.41, 0.24, 0.71) both,
+            flamingoFloat 2s linear 0.5s infinite;
   }
   &--suitcase {
     animation: suitcaseSlideIn 0.5s ease both;
@@ -163,6 +165,24 @@
     }
     100% {
       transform: translate(175px, 90px) rotate(0deg);
+    }
+  }
+
+  @keyframes flamingoFloat {
+    0% {
+      transform: translate(-90px, 110px) rotate(0deg);
+    }
+    25% {
+      transform: translate(-90px, 120px) rotate(7deg);
+    }
+    50% {
+      transform: translate(-90px, 110px) rotate(10deg);
+    }
+    75% {
+      transform: translate(-90px, 100px) rotate(7deg);
+    }
+    100% {
+      transform: translate(-90px, 110px) rotate(0deg);
     }
   }
 }
