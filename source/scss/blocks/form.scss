@@ -71,10 +71,17 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
-  animation: formInputStretch 0.5s ease-out forwards;
+  animation: formInputStretch 0.5s ease-out 0.5s both;
 
   @keyframes formInputStretch {
     0% {
+      opacity: 0;
+      transform: translateX(calc(100% - 6rem));
+    }
+    1% {
+      opacity: 1;
+    }
+    10% {
       transform: translateX(calc(100% - 6rem));
     }
     100% {
@@ -108,6 +115,7 @@
 
 .form__button {
   flex-grow: 1;
+  animation: buttonFadeIn 0.5s ease both;
 
   @media (orientation: portrait) {
     position: relative;
@@ -149,6 +157,28 @@
 
     @media (max-width: $tablet) and (orientation: landscape) {
       display: block;
+    }
+  }
+
+  @keyframes buttonFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.form__button-content {
+  animation: buttonContentFadeIn 0.5s ease 0.5s both;
+
+  @keyframes buttonContentFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }
