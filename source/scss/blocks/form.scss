@@ -60,7 +60,7 @@
 
 .form__field {
   flex: none;
-  padding: 0 5.6rem;
+  padding: 0 6rem;
   height: 6rem;
   width: 100%;
   text-transform: uppercase;
@@ -75,7 +75,7 @@
 
   @keyframes formInputStretch {
     0% {
-      transform: translateX(94%);
+      transform: translateX(calc(100% - 6rem));
     }
     100% {
       transform: translate(0);
@@ -154,7 +154,7 @@
 }
 
 .form--result {
-  .form__field {
+  .form__field-wrapper {
     width: calc(100% - 31rem);
 
     @media (min-width: $stop-scaling) {
