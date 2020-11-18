@@ -263,23 +263,11 @@
       background-color: currentColor;
       right: 0;
       transition: width 0.4s ease-out;
-
-      @media (max-width: $tablet) and (orientation: portrait) {
-        left: 0;
-        right: 0;
-        background-color: var(--color-secondary);
-      }
-
-      @media (max-width: $mobile) and (orientation: landscape) {
-        left: 0;
-        right: 0;
-        background-color: var(--color-secondary);
-      }
     }
 
     &:hover,
     &:focus {
-      color: var(--color); // todo another color
+      color: var(--color);
       outline: none;
 
       &::after {
