@@ -67,7 +67,7 @@
   font: inherit;
   font-size: 2.4rem;
   line-height: 1.2;
-  color: $c-dark;
+  color: $color-purple-dark;
   border: 0;
   border-radius: 3rem;
   outline: none;
@@ -81,16 +81,13 @@
     1% {
       opacity: 1;
     }
-    10% {
-      transform: translateX(calc(100% - 6rem));
-    }
     100% {
       transform: translate(0);
     }
   }
 
   &:focus {
-    border: 1px solid $c-purple;
+    border: 1px solid $color-purple;
   }
 
   @media (min-width: $stop-scaling) {

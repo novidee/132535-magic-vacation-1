@@ -13,7 +13,7 @@
   display: block;
   width: 4rem;
   height: 4rem;
-  color: $c-dark;
+  color: $color-purple-dark;
   border-radius: 50%;
   transition: color 0.4s ease;
 
@@ -32,8 +32,8 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: $c-light;
-    border: 2px solid $c-light;
+    background-color: $color-white;
+    border: 2px solid $color-white;
     z-index: -1;
     transition: all 0.4s ease-in;
   }
@@ -46,7 +46,7 @@
   }
 
   &:hover {
-    color: $c-purple;
+    color: $color-purple;
 
     &::before {
       transform: translate(-50%, -50%) scale(1.125);
@@ -54,11 +54,11 @@
   }
 
   &:focus {
-    color: $c-purple;
+    color: $color-purple;
     outline: none;
 
     &::before {
-      border-color: $c-purple;
+      border-color: $color-purple;
     }
   }
 
@@ -95,13 +95,13 @@
 
   &:active,
   &:active:focus {
-    color: $c-light;
+    color: $color-white;
 
     &::before {
       width: 100%;
       height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
+      background-color: $color-purple;
+      border-color: $color-purple;
     }
   }
 }
@@ -186,7 +186,7 @@
   display: block;
   width: 4rem;
   height: 4rem;
-  color: $c-light;
+  color: $color-white;
   border: 2px solid transparent;
   border-radius: 50%;
   transition: color 0.4s ease-in;
@@ -197,31 +197,31 @@
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
-    color: $c-light;
-    background-color: $c-dark;
+    color: $color-white;
+    background-color: $color-purple-dark;
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
-    color: $c-light;
-    background-color: $c-dark;
+    color: $color-white;
+    background-color: $color-purple-dark;
   }
 
   &:hover {
-    color: $c-purple;
+    color: $color-purple;
   }
 
   &:focus {
-    color: $c-purple;
-    background-color: $c-light;
-    border-color: $c-purple;
+    color: $color-purple;
+    background-color: $color-white;
+    border-color: $color-purple;
     outline: none;
   }
 
   &:active,
   &:active:focus {
-    color: $c-purple;
-    background-color: $c-light;
-    border-color: $c-light;
+    color: $color-purple;
+    background-color: $color-white;
+    border-color: $color-white;
   }
 
   svg {

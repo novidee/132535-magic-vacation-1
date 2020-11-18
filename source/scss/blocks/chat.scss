@@ -111,8 +111,8 @@
 
     p {
       width: 100%;
-      color: $c-dark;
-      background-color: $c-light;
+      color: $color-purple-dark;
+      background-color: $color-white;
       word-break: break-word;
     }
   }
@@ -122,8 +122,8 @@
     text-align: center;
 
     p {
-      color: $c-light;
-      background-color: $c-purple;
+      color: $color-white;
+      background-color: $color-purple;
       word-break: break-word;
     }
   }
@@ -135,7 +135,7 @@
   align-items: center;
   width: 17rem;
   height: 6rem;
-  background-color: $c-purple;
+  background-color: $color-purple;
   border-radius: 3rem;
 
   @media (min-width: $stop-scaling) {
@@ -158,7 +158,7 @@
     margin: 0 0.65rem;
     width: 1rem;
     height: 1rem;
-    background-color: $c-light;
+    background-color: $color-white;
     border-radius: 50%;
 
     @media (min-width: $stop-scaling) {

@@ -189,7 +189,7 @@
 
 .result__title {
   margin: 0 auto 2rem;
-  color: $c-light;
+  color: $color-white;
 
   @media (min-width: $stop-scaling) {
     margin: 0 auto 20px;
@@ -247,7 +247,7 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
-  color: $c-light;
+  color: $color-white;
 
   @media (min-width: $stop-scaling) {
     margin: auto auto 10px;
@@ -298,21 +298,21 @@
     outline: none;
 
     .result__button-icon::before {
-      border-color: $c-purple;
+      border-color: $color-purple;
     }
   }
 
   &:active,
   &:active:focus {
     .result__button-icon {
-      color: $c-light;
+      color: $color-white;
     }
 
     .result__button-icon::before {
       width: 100%;
       height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
+      background-color: $color-purple;
+      border-color: $color-purple;
     }
   }
 }
@@ -322,7 +322,7 @@
   margin-left: 1.5rem;
   width: 4rem;
   height: 4rem;
-  color: $c-dark;
+  color: $color-purple-dark;
   animation:
           buttonIconRollIn 0.8s cubic-bezier(0.43, 0.44, 0.03, 1.65) both,
           buttonIconFadeIn 0.8s ease both;
@@ -338,8 +338,8 @@
     content: "";
     width: 100%;
     height: 100%;
-    background-color: $c-light;
-    border: 2px solid $c-light;
+    background-color: $color-white;
+    border: 2px solid $color-white;
     border-radius: 50%;
     z-index: -1;
   }

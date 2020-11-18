@@ -173,7 +173,7 @@
   position: relative;
   width: 4rem;
   height: 4rem;
-  color: $c-dark;
+  color: $color-purple-dark;
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
   animation-timing-function: cubic-bezier(0.43, 0.44, 0.03, 1.65);
@@ -206,8 +206,8 @@
     content: "";
     width: 100%;
     height: 100%;
-    background-color: $c-light;
-    border: 2px solid $c-light;
+    background-color: $color-white;
+    border: 2px solid $color-white;
     border-radius: 50%;
     z-index: -1;
   }
@@ -226,7 +226,7 @@
   }
 
   &:hover {
-    color: $c-purple;
+    color: $color-purple;
 
     &::before {
       width: 112.5%;
@@ -235,23 +235,23 @@
   }
 
   &:focus {
-    color: $c-purple;
+    color: $color-purple;
     outline: none;
 
     &::before {
-      border-color: $c-purple;
+      border-color: $color-purple;
     }
   }
 
   &:active,
   &:active:focus {
-    color: $c-light;
+    color: $color-white;
 
     &::before {
       width: 100%;
       height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
+      background-color: $color-purple;
+      border-color: $color-purple;
     }
   }
 
@@ -334,7 +334,7 @@
       margin: 0 0.6rem;
       width: 0.4rem;
       height: 0.4rem;
-      background-color: $c-light;
+      background-color: $color-white;
     }
   }
 
@@ -351,7 +351,7 @@
       margin: 0 0.6rem;
       width: 0.4rem;
       height: 0.4rem;
-      background-color: $c-light;
+      background-color: $color-white;
     }
   }
 }

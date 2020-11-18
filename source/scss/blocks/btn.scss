@@ -8,7 +8,7 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 3rem;
-  color: $c-dark;
+  color: $color-purple-dark;
   letter-spacing: -0.04em;
 
   @media (min-width: $stop-scaling) {
@@ -33,36 +33,36 @@
     content: "";
     width: 100%;
     height: 100%;
-    background-color: $c-light;
-    border: 2px solid $c-light;
+    background-color: $color-white;
+    border: 2px solid $color-white;
     border-radius: 3.5rem;
     z-index: -1;
   }
 
   &:hover {
-    color: $c-purple;
+    color: $color-purple;
   }
 
   &:focus {
-    color: $c-purple;
+    color: $color-purple;
     outline: none;
 
     &::before {
       width: 103%;
       height: 108.5%;
-      border-color: $c-purple;
+      border-color: $color-purple;
     }
   }
 
   &:active,
   &:active:focus {
-    color: $c-light;
+    color: $color-white;
 
     &::before {
       width: 100%;
       height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
+      background-color: $color-purple;
+      border-color: $color-purple;
     }
   }
 }
