@@ -52,7 +52,7 @@
     z-index: 1;
 
     .page-header--menu-opened & {
-      color: var(--color);
+      color: var(--color-secondary);
     }
   }
 
@@ -63,7 +63,7 @@
     z-index: 1;
 
     .page-header--menu-opened & {
-      color: var(--color);
+      color: var(--color-secondary);
     }
   }
 
@@ -105,13 +105,13 @@
     position: absolute;
     right: 0.8rem;
     height: 1px;
-    background-color: var(--color);
+    background-color: var(--color-secondary);
   }
 
   &::before {
     top: 0.9rem;
     width: 1rem;
-    box-shadow: 0 0.6rem 0 0 var(--color);
+    box-shadow: 0 0.6rem 0 0 var(--color-secondary);
   }
 
   &::after {
@@ -150,7 +150,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 4rem 3.5rem;
-    color: var(--color);
+    color: var(--color-secondary);
     background-color: $color-white;
 
     .page-header--menu-opened & {
@@ -169,7 +169,7 @@
     align-items: flex-start;
     padding: 2rem 3.5rem;
     max-height: calc(var(--vh, 1vh) * 100);
-    color: var(--color);
+    color: var(--color-secondary);
     background-color: $color-white;
     overflow-y: auto;
 
@@ -196,13 +196,13 @@
   @media (max-width: $tablet) and (orientation: portrait) {
     margin: auto 0;
     font-size: 2.4rem;
-    color: var(--color);
+    color: var(--color-secondary);
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
     margin: auto 0;
     font-size: 1.4rem;
-    color: var(--color);
+    color: var(--color-secondary);
   }
 
   ul {
@@ -267,13 +267,13 @@
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
         right: 0;
-        background-color: var(--color);
+        background-color: var(--color-secondary);
       }
 
       @media (max-width: $mobile) and (orientation: landscape) {
         left: 0;
         right: 0;
-        background-color: var(--color);
+        background-color: var(--color-secondary);
       }
     }
 

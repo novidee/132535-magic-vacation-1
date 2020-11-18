@@ -66,15 +66,19 @@ body {
 
   &[data-theme='purple'] {
     --color: #{$color-purple};
+    --color-secondary: #{$color-purple-light};
   }
   &[data-theme='purple-light'] {
     --color: #{$color-purple-light};
+    --color-secondary: #{$color-purple};
   }
   &[data-theme='blue'] {
     --color: #{$color-blue};
+    --color-secondary: #{$color-blue-light};
   }
   &[data-theme='blue-light'] {
     --color: #{$color-blue-light};
+    --color-secondary: #{$color-blue};
   }
 }
 
