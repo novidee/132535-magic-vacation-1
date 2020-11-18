@@ -1,15 +1,5 @@
 import Swiper from "swiper";
-
-const Theme = {
-  PURPLE_LIGHT: `purple-light`,
-  PURPLE: `purple`,
-  BLUE_LIGHT: `blue-light`,
-  BLUE: `blue`
-};
-
-function setTheme(theme) {
-  document.body.dataset.theme = theme;
-}
+import {Theme, setTheme} from './theme';
 
 export default () => {
   let storySlider;

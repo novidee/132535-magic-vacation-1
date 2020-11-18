@@ -1,14 +1,22 @@
 import throttle from 'lodash/throttle';
+import {Theme, setTheme} from './theme';
 
 const STORY_SCREEN_INDEX = 1;
 const PRIZES_SCREEN_INDEX = 2;
 const BACKGROUND_SCREEN_ACTIVE_CLASS = `background-screen--active`;
 const BACKGROUND_SCREEN_ANIMATE_CLASS = `background-screen--animate`;
 
+const activeScreenThemeMap = {
+  0: Theme.PURPLE_LIGHT,
+  1: Theme.PURPLE,
+  2: Theme.PURPLE_LIGHT,
+  3: Theme.PURPLE_LIGHT,
+  4: Theme.PURPLE_LIGHT
+};
+
 export default class FullPageScroll {
   constructor() {
     this.THROTTLE_TIMEOUT = 2000;
-
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
     this.backgroundScreen = document.querySelector(`.background-screen`);
@@ -83,6 +91,7 @@ export default class FullPageScroll {
     });
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     this.screenElements[this.activeScreen].classList.add(`active`);
+    setTheme(activeScreenThemeMap[this.activeScreen]);
   }
 
   changeActiveMenuItem() {
