@@ -179,21 +179,14 @@
   animation-timing-function: cubic-bezier(0.43, 0.44, 0.03, 1.65);
   animation-duration: 0.8s;
   animation-play-state: paused;
+  transition: opacity 0.5s ease;
 
   &--prev {
     animation-name: controlFadeIn, sliderPrevControlRollIn;
-
-    &.swiper-button-disabled {
-      animation-name: disabledControlFadeIn, sliderPrevControlRollIn;
-    }
   }
 
   &--next {
     animation-name: controlFadeIn, sliderNextControlRollIn;
-
-    &.swiper-button-disabled {
-      animation-name: disabledControlFadeIn, sliderNextControlRollIn;
-    }
   }
 
   @media (min-width: $stop-scaling) {
@@ -278,21 +271,9 @@
     }
   }
 
-  @keyframes disabledControlFadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0.5;
-    }
-  }
-
   @keyframes controlFadeIn {
     0% {
       opacity: 0;
-    }
-    100% {
-      opacity: 1;
     }
   }
 }
