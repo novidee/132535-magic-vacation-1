@@ -173,7 +173,7 @@
   position: relative;
   width: 4rem;
   height: 4rem;
-  color: $color-purple-dark;
+  color: $color-purple;
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
   animation-timing-function: cubic-bezier(0.43, 0.44, 0.03, 1.65);
@@ -219,7 +219,7 @@
   }
 
   &:hover {
-    color: $color-purple;
+    color: $color-purple-light;
 
     &::before {
       width: 112.5%;
@@ -228,11 +228,11 @@
   }
 
   &:focus {
-    color: $color-purple;
+    color: $color-purple-light;
     outline: none;
 
     &::before {
-      border-color: $color-purple;
+      border-color: $color-purple-light;
     }
   }
 
@@ -243,8 +243,8 @@
     &::before {
       width: 100%;
       height: 100%;
-      background-color: $color-purple;
-      border-color: $color-purple;
+      background-color: $color-purple-light;
+      border-color: $color-purple-light;
     }
   }
 

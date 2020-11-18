@@ -43,7 +43,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  color: $color-purple-dark;
+  color: $color-purple;
   background-color: $color-white;
   z-index: 1;
   transform: translateY(100%);
@@ -105,7 +105,7 @@
   display: none;
   width: 4rem;
   height: 4rem;
-  color: $color-purple-dark;
+  color: $color-purple;
   z-index: 1;
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -144,7 +144,7 @@
   display: none;
   width: 4rem;
   height: 4rem;
-  color: $color-purple-dark;
+  color: $color-purple;
   z-index: 1;
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -296,7 +296,7 @@
 }
 
 .screen--story {
-  background-color: $color-purple-dark;
+  background-color: $color-purple;
   background-image: url("../img/slide1.jpg"), url("../img/slide2.jpg"), url("../img/slide3.jpg"), url("../img/slide4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
