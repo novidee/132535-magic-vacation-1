@@ -52,7 +52,7 @@
     z-index: 1;
 
     .page-header--menu-opened & {
-      color: $color-purple;
+      color: var(--color);
     }
   }
 
@@ -63,7 +63,7 @@
     z-index: 1;
 
     .page-header--menu-opened & {
-      color: $color-purple;
+      color: var(--color);
     }
   }
 
@@ -105,13 +105,13 @@
     position: absolute;
     right: 0.8rem;
     height: 1px;
-    background-color: $color-purple;
+    background-color: var(--color);
   }
 
   &::before {
     top: 0.9rem;
     width: 1rem;
-    box-shadow: 0 0.6rem 0 0 $color-purple;
+    box-shadow: 0 0.6rem 0 0 var(--color);
   }
 
   &::after {
@@ -150,7 +150,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 4rem 3.5rem;
-    color: $color-purple;
+    color: var(--color);
     background-color: $color-white;
 
     .page-header--menu-opened & {
@@ -169,7 +169,7 @@
     align-items: flex-start;
     padding: 2rem 3.5rem;
     max-height: calc(var(--vh, 1vh) * 100);
-    color: $color-purple;
+    color: var(--color);
     background-color: $color-white;
     overflow-y: auto;
 
@@ -196,13 +196,13 @@
   @media (max-width: $tablet) and (orientation: portrait) {
     margin: auto 0;
     font-size: 2.4rem;
-    color: $color-purple;
+    color: var(--color);
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
     margin: auto 0;
     font-size: 1.4rem;
-    color: $color-purple;
+    color: var(--color);
   }
 
   ul {
@@ -267,19 +267,19 @@
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
         right: 0;
-        background-color: $color-purple;
+        background-color: var(--color);
       }
 
       @media (max-width: $mobile) and (orientation: landscape) {
         left: 0;
         right: 0;
-        background-color: $color-purple;
+        background-color: var(--color);
       }
     }
 
     &:hover,
     &:focus {
-      color: $color-purple-light;
+      color: var(--color); // todo another color
       outline: none;
 
       &::after {

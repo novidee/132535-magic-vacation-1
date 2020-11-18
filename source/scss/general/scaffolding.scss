@@ -63,6 +63,19 @@ body {
       overflow: hidden;
     }
   }
+
+  &[data-theme='purple'] {
+    --color: #{$color-purple};
+  }
+  &[data-theme='purple-light'] {
+    --color: #{$color-purple-light};
+  }
+  &[data-theme='blue'] {
+    --color: #{$color-blue};
+  }
+  &[data-theme='blue-light'] {
+    --color: #{$color-blue-light};
+  }
 }
 
 a {
