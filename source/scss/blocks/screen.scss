@@ -36,16 +36,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  animation: disclaimerFadeIn 0.7s ease 0.7s both;
-
-  @keyframes disclaimerFadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  animation: fadeIn 0.7s ease 0.7s both;
 }
 
 .screen__footer {
@@ -84,25 +75,7 @@
     animation: none;
 
     .screen__footer-note {
-      animation: rulesFooterFadeOut 0.7s ease both;
-    }
-
-    @keyframes rulesFooterFadeOut {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-  }
-
-  @keyframes footerSlideIn {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(0);
+      animation: fadeIn 0.7s ease both reverse;
     }
   }
 }

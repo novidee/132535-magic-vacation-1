@@ -73,19 +73,6 @@
   outline: none;
   animation: formInputStretch 0.5s ease-out 0.5s both;
 
-  @keyframes formInputStretch {
-    0% {
-      opacity: 0;
-      transform: translateX(calc(100% - 6rem));
-    }
-    1% {
-      opacity: 1;
-    }
-    100% {
-      transform: translate(0);
-    }
-  }
-
   &:focus {
     border: 1px solid $color-purple-light;
   }
@@ -112,7 +99,7 @@
 
 .form__button {
   flex-grow: 1;
-  animation: buttonFadeIn 0.5s ease both;
+  animation: fadeIn 0.5s ease both;
 
   @media (orientation: portrait) {
     position: relative;
@@ -156,28 +143,10 @@
       display: block;
     }
   }
-
-  @keyframes buttonFadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 }
 
 .form__button-content {
-  animation: buttonContentFadeIn 0.5s ease 0.4s both;
-
-  @keyframes buttonContentFadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  animation: fadeIn 0.5s ease 0.4s both;
 }
 
 .form--result {

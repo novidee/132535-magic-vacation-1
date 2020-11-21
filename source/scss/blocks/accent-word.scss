@@ -7,7 +7,7 @@
 .accent-word__letter {
   display: inline-block;
   animation-play-state: paused;
-  animation-name: letterSlideIn;
+  animation-name: accentLetterSlideIn;
   animation-fill-mode: both;
   animation-timing-function: ease;
 }
@@ -23,11 +23,3 @@
   }
 }
 
-@keyframes letterSlideIn {
-  0% {
-    transform: translate3d(0, 1.2em, 0);
-  }
-  100% {
-    transform: translate3d(0, 0.2em, 0);
-  }
-}

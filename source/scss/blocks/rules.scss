@@ -85,18 +85,6 @@
   p {
     margin: 0;
   }
-
-  @keyframes rulesFadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(1em);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 }
 
 .rules__list {
@@ -127,18 +115,6 @@
 
   @media (max-width: $mobile) and (orientation: landscape) {
     grid-column-gap: 4rem;
-  }
-}
-
-@keyframes rulesItemCircleFadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -229,20 +205,6 @@
   }
 }
 
-@keyframes rulesTextFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateX(3rem);
-  }
-  75% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 .rules__text {
   margin: 0;
   animation: rulesTextFadeIn 0.4s ease-out 0s both;
@@ -269,7 +231,7 @@
     }
 
     .rules__buttonText {
-      animation: rulesButtonTextFadeIn 0.4s ease-out 0.3s both;
+      animation: fadeIn 0.4s ease-out 0.3s both;
     }
   }
 
@@ -291,23 +253,5 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     bottom: 2rem;
     right: 1.5rem;
-  }
-
-  @keyframes rulesLinkTranslate {
-    0% {
-      transform: translate(15%, -50%);
-    }
-    100% {
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  @keyframes rulesButtonTextFadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
   }
 }

@@ -1,0 +1,284 @@
+@keyframes accentLetterSlideIn {
+  0% {
+    transform: translate3d(0, 1.2em, 0);
+  }
+  100% {
+    transform: translate3d(0, 0.2em, 0);
+  }
+}
+
+@keyframes flamingoFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-90px, calc(50vh - 30%)) rotate(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-90px, 110px);
+  }
+}
+
+@keyframes suitcaseSlideIn {
+  0% {
+    transform: translate(-45px, calc(50vh - 90px)) scale(0.04);
+  }
+  80% {
+    transform: translate(0px, 20px);
+  }
+  100% {
+    transform: translate(0px, 50px);
+  }
+}
+
+@keyframes leftLeafShake {
+  0% {
+    opacity: 0;
+    transform: translate(-230px, 90px) rotate(40deg);
+  }
+  14.2% {
+    opacity: 1;
+    transform: translate(-200px, 115px) rotate(-21deg);
+  }
+  28.4% {
+    transform: translate(-230px, 90px) rotate(13deg);
+  }
+  42.6% {
+    transform: translate(-230px, 90px) rotate(-8deg);
+  }
+  56.8% {
+    transform: translate(-230px, 90px) rotate(5deg);
+  }
+  71% {
+    transform: translate(-230px, 90px) rotate(-3deg);
+  }
+  85.2% {
+    transform: translate(-230px, 90px) rotate(2deg);
+  }
+  100% {
+    transform: translate(-230px, 90px) rotate(0);
+  }
+}
+
+@keyframes rightLeafShake {
+  0% {
+    opacity: 0;
+    transform: translate(150px, -5px) rotate(-18deg);
+  }
+  16.6% {
+    opacity: 1;
+    transform: translate(150px, -5px) rotate(13deg);
+  }
+  33.3% {
+    transform: translate(150px, -5px) rotate(-8deg);
+  }
+  50% {
+    transform: translate(150px, -5px) rotate(5deg);
+  }
+  66.6% {
+    transform: translate(150px, -5px) rotate(-3deg);
+  }
+  83.3% {
+    transform: translate(150px, -5px) rotate(2deg);
+  }
+  100% {
+    transform: translate(150px, -5px) rotate(0deg);
+  }
+}
+
+@keyframes greenLeafShake {
+  0% {
+    opacity: 0;
+    transform: translate(170px, 95px) rotate(-15deg);
+  }
+  16.6% {
+    opacity: 1;
+    transform: translate(175px, 95px) rotate(10deg);
+  }
+  33.3% {
+    transform: translate(175px, 90px) rotate(-8deg);
+  }
+  50% {
+    transform: translate(175px, 90px) rotate(5deg);
+  }
+  66.6% {
+    transform: translate(175px, 90px) rotate(-3deg);
+  }
+  83.3% {
+    transform: translate(175px, 90px) rotate(2deg);
+  }
+  100% {
+    transform: translate(175px, 90px) rotate(0deg);
+  }
+}
+
+@keyframes flamingoFloat {
+  0% {
+    transform: translate(-90px, 110px) rotate(0deg);
+  }
+  25% {
+    transform: translate(-90px, 120px) rotate(7deg);
+  }
+  50% {
+    transform: translate(-90px, 110px) rotate(10deg);
+  }
+  75% {
+    transform: translate(-90px, 100px) rotate(7deg);
+  }
+  100% {
+    transform: translate(-90px, 110px) rotate(0deg);
+  }
+}
+
+@keyframes screenTransition {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes buttonIconRollIn {
+  0% {
+    transform: translateX(100%) rotate(140deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes socialLinkFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes formInputStretch {
+  0% {
+    opacity: 0;
+    transform: translateX(calc(100% - 6rem));
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes introMessageFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rulesFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rulesTextFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rulesLinkTranslate {
+  0% {
+    transform: translate(15%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rulesItemCircleFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes footerSlideIn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes sliderPrevControlRollIn {
+  0% {
+    transform: translateX(-100%) rotate(-140deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes sliderNextControlRollIn {
+  0% {
+    transform: translateX(100%) rotate(140deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes sliderControlFadeIn {
+  0% {
+    opacity: 0;
+  }
+}
