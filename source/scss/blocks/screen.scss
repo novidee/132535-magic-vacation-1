@@ -36,6 +36,16 @@
   left: 0;
   right: 0;
   z-index: 1;
+  animation: disclaimerFadeIn 0.7s ease 0.7s both;
+
+  @keyframes disclaimerFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 .screen__footer {
@@ -67,6 +77,23 @@
     &.screen__footer--full {
       width: 100%;
       height: 16rem;
+    }
+  }
+
+  &--rules {
+    animation: none;
+
+    .screen__footer-note {
+      animation: rulesFooterFadeOut 0.7s ease both;
+    }
+
+    @keyframes rulesFooterFadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
     }
   }
 
