@@ -74,6 +74,14 @@
   &--rules {
     animation: none;
 
+    @media (max-width: $tablet) and (orientation: portrait) {
+      display: none;
+    }
+
+    @media (max-width: $mobile) and (orientation: landscape) {
+      display: none;
+    }
+
     .screen__footer-note {
       animation: fadeIn 0.7s ease both reverse;
     }
